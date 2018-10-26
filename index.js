@@ -13,11 +13,15 @@ express()
       'Origin, X-Requested-With, Content-Type, Accept')
     next()
   })
-  // .use(express.static('./'))
   .use(express.json())
   .get('/', (req, res ) => {
     getUrls((data) => {
-      if (!data.length) return updateDB(() => { getUrls() })
+      if (!data.length) return updateDB(() => {
+        getUrls((data) => {
+          res.send(data)
+          // res.end()
+        })
+      })
       res.send(data)
       res.end()
     })
