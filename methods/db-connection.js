@@ -8,9 +8,9 @@ const mysql = require('mysql')
 // })
 const db_connection = mysql.createConnection({
   host: 'us-cdbr-iron-east-01.cleardb.net',
-  database: 'heroku_d269b7a3680ce53',
-  user: 'be17d660a03bf7',
-  password: '8ba255e3'
+  database: 'heroku_43c8e1c3b41665f',
+  user: 'bacf05b4c11ff7',
+  password: 'bacf05b4c11ff7'
 })
 
 module.exports = db_connection
